@@ -101,17 +101,18 @@ secret_page = f"""{base_style}
 def login():
     error = ""
     if request.method == "POST":
-        username = request.form["username"]
-        password = request.form["password"]
+        username = request.form["username"].strip()
+        password = request.form["password"].strip()
 
         conn = get_db()
         user = conn.execute(
-            "SELECT * FROM users WHERE username=? AND password=?",
-            (username, password)
+            "SELECT * FROM users WHERE username=?",
+            (username,)
         ).fetchone()
         conn.close()
 
-        if user:
+        # user['password'] is bytes in SQLite; check with bcrypt
+        if user and bcrypt.checkpw(password.encode("utf-8"), user["password"]):
             session["user"] = username
             return redirect(url_for("secret"))
         else:
@@ -123,14 +124,16 @@ def login():
 def register():
     error = ""
     if request.method == "POST":
-        username = request.form["username"]
-        password = request.form["password"]
+        username = request.form["username"].strip()
+        password = request.form["password"].strip()
 
         if not username or not password:
             error = "Fields cannot be empty"
+        elif not is_valid_password(password):
+            error = "Password must include uppercase, lowercase, number, and special character"
         else:
             try:
-                # Hash the password
+                # Hash password with bcrypt
                 hashed_pw = bcrypt.hashpw(password.encode("utf-8"), bcrypt.gensalt())
 
                 conn = get_db()
