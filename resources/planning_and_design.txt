@@ -5,19 +5,24 @@ APP PLANNING & DESIGN
 1. PROJECT IDEA
 -------------------------
 - What is your app called?
-- What type of app is it? (journal, listings, notes, etc.)
+- What type of app is it? (journal, listings, notes, etc.) 
+    Profile and Notes
 - What will users use your app for?
-
+    They will use the app to write down notes. 
 2. DATA MODEL (WHAT ARE YOU STORING?)
 -------------------------
 - What is a single “entry” in your app?
+    
 - What fields will each entry have? (title, content, date, etc.)
+
 - How will entries be connected to a user?
 
 3. CORE FEATURES (CRUD)
 -------------------------
 - What can users CREATE?
+    Users can create a note "pad" to write it. 
 - What will they see on the main page (READ)?
+    They will see a welcome page with their name and the date. 
 - What can users EDIT (UPDATE)?
 - What can users DELETE?
 
