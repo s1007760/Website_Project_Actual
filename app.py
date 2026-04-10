@@ -110,27 +110,7 @@ def secret():
 # - Save data to the database (POST)
 # - Redirect back to dashboard
 # NOTE: Remove the triple """ before and after each route to 'uncomment'
-@app.route("/create", methods=["GET", "POST"])
-def create():
-    if "user" not in session:
-        return redirect(url_for("login"))
 
-    if request.method == "POST":
-        title = request.form["title"]
-        content = request.form["content"]
-
-        conn = get_db()
-        conn.execute(
-            "INSERT INTO entries (title, content, user) VALUES (?, ?, ?)",
-            (title, content, session["user"])
-        )
-        conn.commit()
-        conn.close()
-
-    return redirect(url_for("dashboard"))
-   # return render_template("create.html", username=session["user"])
-
-"""
 @app.route("/create", methods=["GET", "POST"])
 def create():
     if "user" not in session:
@@ -138,18 +118,23 @@ def create():
 
     if request.method == "POST":
         # TODO: Get form data (title, content)
-
+        title = request.form["title"]
         # TODO: Connect to database
+        content = request.form["content"]
 
         # TODO: Insert into entries table
-        # IMPORTANT: include session["user"]
-
+#       # IMPORTANT: include session["user"]
+        conn = get_db()
+        conn.execute(
+            "INSERT INTO entries (title, content, user) VALUES (?, ?, ?)",
+            (title, content, session["user"])
+        )
         # TODO: Commit and close
-
+        conn.commit()
+        conn.close()
         return redirect(url_for("dashboard"))
+    return render_template("create.html", username=session["user"])
 
-    return render_template("create.html")
-"""
 
 # ---------- UPDATE ----------
 # TODO: Create a route like /edit/<id>
