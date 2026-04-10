@@ -114,7 +114,21 @@ def secret():
 def create():
     if "user" not in session:
         return redirect(url_for("login"))
-    return render_template("create.html", username=session["user"])
+
+    if request.method == "POST":
+        title = request.form["title"]
+        content = request.form["content"]
+
+        conn = get_db()
+        conn.execute(
+            "INSERT INTO entries (title, content, user) VALUES (?, ?, ?)",
+            (title, content, session["user"])
+        )
+        conn.commit()
+        conn.close()
+
+    return redirect(url_for("dashboard"))
+   # return render_template("create.html", username=session["user"])
 
 """
 @app.route("/create", methods=["GET", "POST"])
