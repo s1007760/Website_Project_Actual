@@ -8,13 +8,15 @@
 <form method="POST">
 
     <!-- TODO: Add input for title -->
-    
+    <input name="title" placeholder="title"><br>
     <!-- TODO: Add input for content -->
-
+    <input name="content" placeholder="content"><br>
     <!-- TODO: Add submit button -->
-
+    <button type="submit">Submit</button>
 </form>
 
 <!-- TODO: Add a link back to dashboard -->
+<a href="/secret">Back To Dashboard</a>
+<p class="error">{{ error }}</p>
 
 {% endblock %}
