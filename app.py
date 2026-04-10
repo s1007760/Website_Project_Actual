@@ -176,20 +176,21 @@ def edit(id):
 # This should:
 # - Delete an entry from the database
 # - Redirect back to dashboard
-
-
+    # TODO: Connect to database
+    # TODO: Delete entry WHERE id AND user
+    # TODO: Commit and close
 @app.route("/delete/<int:id>")
 def delete(id):
     if "user" not in session:
         return redirect(url_for("login"))
 
-    # TODO: Connect to database
     conn = get_db()
-    #user = conn.execute
-    # TODO: Delete entry WHERE id AND user
-   # where id and user:
-
-    # TODO: Commit and close
+    conn.execute(
+        "DELETE FROM entries WHERE id=? AND user=?",
+        (id, session["user"])
+    )
+    conn.commit()
+    conn.close()
 
     return redirect(url_for("dashboard"))
 
