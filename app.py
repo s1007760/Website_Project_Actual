@@ -110,6 +110,11 @@ def secret():
 # - Save data to the database (POST)
 # - Redirect back to dashboard
 # NOTE: Remove the triple """ before and after each route to 'uncomment'
+@app.route("/create", methods=["GET", "POST"])
+def create():
+    if "user" not in session:
+        return redirect(url_for("login"))
+    return render_template("create.html", username=session["user"])
 
 """
 @app.route("/create", methods=["GET", "POST"])
