@@ -91,12 +91,12 @@ def dashboard():
         (session["user"],)
     ).fetchall()
     conn.close()
-    return render_template_string(page, entries=entries)
+    #return render_template_string(page, entries=entries)
     #return render_template("dashboard.html", entries=entries, username=session["user"])
 
 
     # TEMPORARY (remove later)
-    #return render_template("dashboard.html", username=session["user"])
+    return render_template("dashboard.html", username=session["user"])
 
 
 # ---------- CREATE ----------
