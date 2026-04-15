@@ -44,19 +44,19 @@ def seed_database():
 
 
     sample_entries = [
-        ("Note", "Important", "Dont forget to buy eggs","alice"),
-        ("Diary", "Yesterday", "I visited the doctor", "bob"),
-        ("Note", "For cheese", "It is currently on sale", "charlie"),
+        ("Important", "Dont forget to buy eggs","alice"),
+        ("Yesterday", "I visited the doctor", "bob"),
+        ("For cheese", "It is currently on sale", "charlie"),
     ]
-
+#"Note","Diary","Note",
     try:
-        for id, title, content, user in sample_entries:
+        for title, content, user in sample_entries:
             #hashed_pw = bcrypt.hashpw(password.encode("utf-8"), bcrypt.gensalt())
             conn.execute(
-                "INSERT INTO entries (id, title, content, user) VALUES (?, ?, ?, ?)",
-                (id, title, content, user)
+                "INSERT INTO entries (title, content, user) VALUES (?, ?, ?)",
+                (title, content, user)
             )
-            print(f"Created entry: {user}, {idee}")
+            print(f"Created entry: {user}, {title}")
         
         conn.commit()
         print("\nDatabase seeding complete!")
