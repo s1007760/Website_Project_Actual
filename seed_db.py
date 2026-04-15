@@ -25,6 +25,12 @@ def seed_database():
         ("bob", "SecurePass456@"),
         ("charlie", "MyPassword789#"),
     ]
+
+    sample_entrires = [
+        ("alice1", "Password123!1"),
+        ("bob1", "SecurePass456@1"),
+        ("charlie1", "MyPassword789#1"),
+    ]
     
     try:
         for username, password in sample_users:
