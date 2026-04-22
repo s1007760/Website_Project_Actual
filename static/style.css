@@ -1,13 +1,15 @@
 body {
-    font-family: Arial, sans-serif;
-    background: #f4f6f8;
+    font-family: 'Courier New', Courier, monospace;
+    background: #7A223A
+;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
 }
 .card {
-    background: white;
+    background: #B52A4F
+;
     padding: 25px;
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0,0,0,0.1);
@@ -22,8 +24,8 @@ input {
 button {
     padding: 10px;
     width: 60%;
-    background: #4CAF50;
-    color: white;
+    background: black;
+    color: #E3CCFB;
     border: none;
 }
 .error {
