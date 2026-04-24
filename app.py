@@ -114,9 +114,9 @@ def create():
 
     if request.method == "POST":
         # TODO: Get form data (title, content)
-        title = request.form["title"]
+        title = request.form["Title"]
         # TODO: Connect to database
-        content = request.form["content"]
+        content = request.form["Content"]
 
         # TODO: Insert into entries table
 #       # IMPORTANT: include session["user"]
