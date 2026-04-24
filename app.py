@@ -98,7 +98,7 @@ def dashboard():
     # TEMPORARY (remove later)
     return render_template("dashboard.html", entries=entries, username=session["user"])
 
-
+#old
 # ---------- CREATE ----------
 # TODO: Create a route like /create
 # This page should:
