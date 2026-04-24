@@ -31,19 +31,19 @@
 
     <!-- page = f"""{base_style} -->
     <div class="card">
-    <h2>Your Entries</h2>
+        <h2>Your Entries</h2>
 
-    <a href="/create"><button>Create New</button></a>
-    <br><br>
+        <a href="/create"><button>Create New</button></a>
+        <br><br>
 
-    {% for entry in entries %}
-        <div>
+        {% for entry in entries %}
+        <!-- <div> -->
             <h3>{{ entry['title'] }}</h3>
             <p>{{ entry['content'] }}</p>
             <a href="/edit/{{ entry['id'] }}">Edit</a>
             <a href="/delete/{{ entry['id'] }}">Delete</a>
             <hr>
-        </div>
+        <!-- </div> -->
     {% endfor %}
 
     <a href="/logout"><button>Logout</button></a>
