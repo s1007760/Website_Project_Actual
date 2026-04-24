@@ -15,17 +15,21 @@
 <!-- TODO: Loop through entries passed from Flask -->
 <!-- The variable "entries" will come from your Flask route -->
 
-<!--#       TODO: Add Edit link --> -->
+<!--#       TODO: Add Edit link -->
 <!-- Example structure: -->
  <!--  TODO: Add Edit link -->
 
 {% for entry in entries %}
-
+    <div>
+        <!-- <h3>{{ entry['title'] }}</h3> -->
+        <!-- <p>{{ entry['content'] }}</p> -->
+        <!-- <a href="/logout"><button>Logout</button></a> -->
+         <!-- <a href="/create"><button>Create New</button></a> -->
+        <p class="error">{{ error }}</p>
+    </div>
 
 <!-- page = f"""{base_style} -->
-
-    <div class="card
-    
+    <div class="card">
     <h2>Your Entries</h2>
 
     <a href="/create"><button>Create New</button></a>
@@ -43,22 +47,18 @@
 
     <a href="/logout"><button>Logout</button></a>
     </div>
-    """-->
-    
+    <!-- """ -->
 <!-- TODO: If no entries exist, display a message like:
 "No entries yet!" -->
 <style>
     body { font-family: 'Verdana', sans-serif;}
     
 </style>
-<!--<h1
-    style="font-size: 2rem;"-->
+<!-- <h1
+    style="font-size: 2rem;">Large Heading</h1> -->
 <br>
 
 <!-- TODO: Add a logout button -->
-<a href="/logout"><button>Logout</button></a>
-<a href="/create"><button>Back To Dashboard</button></a>
-<p class="error">{{ error }}</p>
 
 {% endfor %}
 
