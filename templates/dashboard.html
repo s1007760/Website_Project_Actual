@@ -10,8 +10,7 @@
 
 <!-- TODO: Add a button or link to create a new entry -->
 <!-- Example: <a href="/create">Create New Entry</a> -->
-<a href="/create">Create New Entry</a>
-<br><br>
+
 
 <!-- TODO: Loop through entries passed from Flask -->
 <!-- The variable "entries" will come from your Flask route -->
@@ -21,12 +20,12 @@
  <!--  TODO: Add Edit link -->
 
 {% for entry in entries %}
-    <div>
-        <h3>{{ entry['title'] }}</h3>
-        <p>{{ entry['content'] }}</p>
 
-page = f"""{base_style}
-    <div class="card">
+
+<!-- page = f"""{base_style} -->
+
+    <div class="card
+    
     <h2>Your Entries</h2>
 
     <a href="/create"><button>Create New</button></a>
@@ -44,15 +43,16 @@ page = f"""{base_style}
 
     <a href="/logout"><button>Logout</button></a>
     </div>
-    """ -->
+    """-->
+    
 <!-- TODO: If no entries exist, display a message like:
 "No entries yet!" -->
 <style>
     body { font-family: 'Verdana', sans-serif;}
     
 </style>
-<h1
-    style="font-size: 2rem;">Large Heading</h1>
+<!--<h1
+    style="font-size: 2rem;"-->
 <br>
 
 <!-- TODO: Add a logout button -->
