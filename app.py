@@ -96,7 +96,7 @@ def dashboard():
 
 
     # TEMPORARY (remove later)
-    return render_template("dashboard.html", username=session["user"])
+    return render_template("dashboard.html", entries=entries, username=session["user"])
 
 
 # ---------- CREATE ----------
