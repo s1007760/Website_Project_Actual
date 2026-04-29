@@ -6,8 +6,8 @@
 
 <h1 style="color:#FEF960;">Your Dashboard</h1>
 <h3 style="color:#F3C976;">Welcome, {{ username }}!</h3>
-<a href="/create"><button>Create New</button></a>
-<a href="/logout"><button>Logout</button></a>
+<!-- <a href="/create"><button>Create New</button></a> -->
+<!-- <a href="/logout"><button>Logout</button></a> -->
 
 <!-- TODO: Add a button or link to create a new entry -->
 <!-- Example: <a href="/create">Create New Entry</a> -->
@@ -26,17 +26,16 @@
         <!-- <p>{{ entry['content'] }}</p> -->
         <!-- <a href="/logout"><button>Logout</button></a> -->
          <!-- <a href="/create"><button>Create New</button></a> -->
-        <p class="error">{{ error }}</p>
-    </div> -->
+    <p class="error">{{ error }}</p>
+    </div>
 
     <!-- page = f"""{base_style} -->
     <div class="card">
         <h2>Your Entries</h2>
-
         <a href="/create"><button>Create New</button></a>
         <br><br>
 
-        <!-- {% for entry in entries %} -->
+        {% for entry in entries %}
         <!-- <div> Might be an issue here--> 
             <!-- title. DO NOT DEL -->
             <h3>{{ entry['title'] }}</h3>
@@ -45,8 +44,8 @@
             <a href="/edit/{{ entry['id'] }}">Edit</a>
             <a href="/delete/{{ entry['id'] }}">Delete</a>
             <hr>
-        <!-- </div> -->
-    <!-- {% endfor %} -->
+        <!--</div> -->
+        <!--{% endfor %} -->
 
     <a href="/logout"><button>Logout</button></a>
     </div>
