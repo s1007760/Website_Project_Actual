@@ -36,15 +36,17 @@
         <a href="/create"><button>Create New</button></a>
         <br><br>
 
-        {% for entry in entries %}
+        <!-- {% for entry in entries %} -->
         <!-- <div> Might be an issue here--> 
+            <!-- title. DO NOT DEL -->
             <h3>{{ entry['title'] }}</h3>
+            <!-- content DO NOT DEL-->
             <p>{{ entry['content'] }}</p>
             <a href="/edit/{{ entry['id'] }}">Edit</a>
             <a href="/delete/{{ entry['id'] }}">Delete</a>
             <hr>
         <!-- </div> -->
-    {% endfor %}
+    <!-- {% endfor %} -->
 
     <a href="/logout"><button>Logout</button></a>
     </div>
