@@ -2,20 +2,15 @@
 
 {% block content %}
 <h2>Edit Entry</h2>
-
-<!-- TODO: Create a form that sends a POST request -->
-
+    <div class="card">
+    <h2>Edit Entry</h2>
 <form method="POST">
-
-    <!-- TODO: Pre-fill title using entry data -->
-    <!-- Hint: value="{{ entry['title'] }}" -->
-
-    <!-- TODO: Pre-fill content using entry data -->
-
-    <!-- TODO: Add submit button -->
+        <input name="title" value="{{ entry['title'] }}"><br>
+        <input name="content" value="{{ entry['content'] }}"><br>
+        <button type="submit">Update</button>
 
 </form>
-
+</div>
 <!-- TODO: Add a link back to dashboard -->
 
 {% endblock %}
