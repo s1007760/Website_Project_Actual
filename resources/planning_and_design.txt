@@ -5,18 +5,21 @@ APP PLANNING & DESIGN
 1. PROJECT IDEA
 -------------------------
 - What is your app called?
+Tenna-Themed Journal App
 - What type of app is it? (journal, listings, notes, etc.) 
     Profile and Notes
 - What will users use your app for?
-    They will use the app to write down notes. 
+    They will use the app to write down notes with titles or dates.
+
 2. DATA MODEL (WHAT ARE YOU STORING?)
 -------------------------
 - What is a single “entry” in your app?
-    
+    It's a Title and the content that the user entered with it.
 - What fields will each entry have? (title, content, date, etc.)
-
+    Title, content. (user can put date in the title)
 - How will entries be connected to a user?
-
+    When each user logs in the dashboard will welcome them specifically, and the 
+    dashboard will only show the entries that user put in.
 3. CORE FEATURES (CRUD)
 -------------------------
 - What can users CREATE?
