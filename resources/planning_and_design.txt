@@ -27,20 +27,28 @@ Tenna-Themed Journal App
 - What will they see on the main page (READ)?
     They will see a welcome page with their name and the date. 
 - What can users EDIT (UPDATE)?
+    Their note entries, they can edit what they say.
 - What can users DELETE?
-
+    Again, their note entries.
 4. USER FLOW
 -------------------------
 - What happens after a user logs in?
+    They are brought to their dashboard that shows them all their entries, an add
+    entry button, and a logout button.
 - What pages/routes will your app need? (dashboard, create, edit, etc.)
+    Dashboard, create, edit, delete, sign-up, log-in, log-out.
 - Describe a typical user experience from login → using your app
-
+    Login-> see dashboard->Click add entry->Write what you want in the entry boxes-> Click submit
+    ->view entries in dashboard->delete or edit them if you want-> sign out
 5. USER EXPERIENCE (UX)
 -------------------------
 - How should your app look and feel?
+    We are keeping it simple, but most of the team decided on a specific color-scheme.
 - How will users navigate between pages?
+    Buttons
 - How will entries be displayed (list, cards, etc.)?
-
+    A list on a seperate card than the welcome, create, and logout button.
 6. OPTIONAL FEATURES
 -------------------------
 - What extra features might you add? (search, tags, sorting, etc.)
+    Won't have time for any.
