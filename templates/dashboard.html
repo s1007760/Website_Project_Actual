@@ -13,7 +13,11 @@
 </div>  
 
 {% for entry in entries %}
+
 <div class="card">
+<div class="scrollableAreaContainer"
+    > 
+    <!-- DO NOT MOVE THE END OF DIV. It will BREAK it. Don't ask why, it just does -->
     <h2>Your Entries</h2>
     <a href="/create"><button>Create New</button></a>
     <!-- DO NOT MOVE OUTSIDE OF DIV, IT BREAKS EVERYTHING -->
@@ -30,6 +34,7 @@
     <!--{% endfor %} -->
 
     <!-- <a href="/logout"><button>Logout</button></a> -->
+    </div>
 </div>
 
 {% endblock %}
