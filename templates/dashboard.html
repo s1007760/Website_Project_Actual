@@ -11,29 +11,27 @@
 <p class="error">{{ error }}</p>
 </div>  
 
-{% for entry in entries %}
+{% if entries %}
 
 <div class="card">
+    <!-- These only need to appear ONCE, so they go OUTSIDE the loop -->
     <h2>Your Entries</h2>
     <a href="/create"><button>Create New</button></a>
-<div class="scrollableAreaContainer"
-    > 
-    <!-- DO NOT MOVE THE END OF DIV. It will BREAK it. Don't ask why, it just does -->
-    <!-- DO NOT MOVE OUTSIDE OF DIV, IT BREAKS EVERYTHING -->
-    <br><br>
-    <!-- <div> Might be an issue here-->
-    <!-- title. DO NOT DEL -->
-    <h3>{{ entry['title'] }}</h3>
-    <!-- content DO NOT DEL-->
-    <p>{{ entry['content'] }}</p>
-    <a href="/edit/{{ entry['id'] }}">Edit</a>
-    <a href="/delete/{{ entry['id'] }}">Delete</a>
-    <hr>
-    <!--</div> -->
-    <!--{% endfor %} -->
 
-    <!-- <a href="/logout"><button>Logout</button></a> -->
-    </div>
+    <div class="scrollableAreaContainer"> 
+        <br><br>
+
+        {% for entry in entries %}
+            <!-- Everything inside here repeats for every entry -->
+            <h3>{{ entry['title'] }}</h3>
+            <p>{{ entry['content'] }}</p>
+            <a href="/edit/{{ entry['id'] }}">Edit</a>
+            <a href="/delete/{{ entry['id'] }}">Delete</a>
+            <hr>
+        {% endfor %}
+
+    </div> 
 </div>
 
+{% endif %}
 {% endblock %}
