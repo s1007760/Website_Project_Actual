@@ -179,19 +179,33 @@ def edit(id):
     # TODO: Connect to database
     # TODO: Delete entry WHERE id AND user
     # TODO: Commit and close
-@app.route("/delete/<int:id>")
+@app.route("/delete/<int:id>", methods=["GET", "POST"])
 def delete(id):
     if "user" not in session:
         return redirect(url_for("login"))
 
     conn = get_db()
-    conn.execute(
-        "DELETE FROM entries WHERE id=? AND user=?",
+    entry = conn.execute(
+        "SELECT * FROM entries WHERE id=? AND user=?",
         (id, session["user"])
-    )
-    conn.commit()
+    ).fetchone()
+
+    if not entry:
+        conn.close()
+        return "Entry not found"
+
+    if request.method == "POST":
+        try:
+            conn.execute(
+                "DELETE FROM entries WHERE id=? AND user=?",
+                (id, session["user"])
+                )
+            conn.commit()
+        finally:
+            conn.close()
+        return redirect(url_for("dashboard"))
+
     conn.close()
-    return redirect(url_for("dashboard"))
     return render_template("delete.html", entry=entry)
 
 
