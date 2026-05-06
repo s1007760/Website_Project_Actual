@@ -19,7 +19,8 @@ def init_db():
         id INTEGER PRIMARY KEY AUTOINCREMENT,
         title TEXT,
         content TEXT,
-        user TEXT
+        user TEXT,
+        image BLOB
     )
     """)
     conn.commit()
