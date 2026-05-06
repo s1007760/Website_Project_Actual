@@ -15,7 +15,7 @@
 
 <div class="card">
     <!-- These only need to appear ONCE, so they go OUTSIDE the loop -->
-    <h2>Your Entries</h2>
+    <h2 style="color:#FEF960;">Your Entries</h2>
     <a href="/create"><button>Create New</button></a>
 
     <div class="scrollableAreaContainer"> 
@@ -23,8 +23,8 @@
 
         {% for entry in entries %}
             <!-- Everything inside here repeats for every entry -->
-            <h3>{{ entry['title'] }}</h3>
-            <p>{{ entry['content'] }}</p>
+            <h3 style="color:#FEF960;">{{ entry['title'] }}</h3>
+            <p style="color:#F3C976;">{{ entry['content'] }}</p>
             <a href="/edit/{{ entry['id'] }}">Edit</a>
             <a href="/delete/{{ entry['id'] }}">Delete</a>
             <hr>
