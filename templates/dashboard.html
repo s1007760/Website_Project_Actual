@@ -27,7 +27,12 @@
             <!-- Everything inside here repeats for every entry -->
             <h3 style="color:#2D2D33;">{{ entry['title'] }}</h3>
             <p style="color:#2D2D33;">{{ entry['content'] }}</p>
-            <p style=>{{ entry['image'] }}</p>
+            {# Display the image #}
+            {% if entry['image'] %}
+                <img src="{{ url_for('static', filename='upload/' + entry['image']) }}" 
+                alt="{{ entry['title'] }}"
+                style="max-width: 300px; height: auto;">
+            {% endif %}
             <a href="/edit/{{ entry['id'] }}">Edit</a>
             <a href="/delete/{{ entry['id'] }}">Delete</a>
             <hr>
