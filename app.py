@@ -117,13 +117,14 @@ def create():
         title = request.form["Title"]
         # TODO: Connect to database
         content = request.form["Content"]
+        image = request.form["Image"]
 
         # TODO: Insert into entries table
 #       # IMPORTANT: include session["user"]
         conn = get_db()
         conn.execute(
-            "INSERT INTO entries (title, content, user) VALUES (?, ?, ?)",
-            (title, content, session["user"])
+            "INSERT INTO entries (title, content, image, user) VALUES (?, ?, ?, ?)",
+            (title, content, image, session["user"])
         )
         # TODO: Commit and close
         conn.commit()
@@ -159,10 +160,11 @@ def edit(id):
     if request.method == "POST":
         title = request.form["title"]
         content = request.form["content"]
+        image = request.form["image"]
 
         conn.execute(
-            "UPDATE entries SET title=?, content=? WHERE id=?",
-            (title, content, id)
+            "UPDATE entries SET title=?, content=?, image=? WHERE id=?",
+            (title, content, image, id)
         )
         conn.commit()
         conn.close()
