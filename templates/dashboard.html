@@ -30,7 +30,7 @@
             {# Display the image #}
             {% if entry['image'] %}
                 <img src="{{ url_for('static', filename='upload/' + entry['image']) }}" 
-                alt="{{ entry['title'] }}"
+                alt="{{ entry['image'] }}"
                 style="max-width: 300px; height: auto;">
             {% endif %}
             <a href="/edit/{{ entry['id'] }}">Edit</a>
