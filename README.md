@@ -4,8 +4,8 @@
 
 When you finish, add your names and a demo video link here, then submit one link to your project repository.
 
-**Group Members:** (list all group members here)  
-* [Demo Video (1 per group)](http://includeyourlinkhere)
+**Group Members:** (Penn, Eliza, Quin)  
+* [OUR VIDEO](https://app.screencastify.com/watch/4QfVL99ew8dNMm8SNAFo)
 
 ---
 
