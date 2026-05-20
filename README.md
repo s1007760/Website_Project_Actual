@@ -5,7 +5,7 @@
 When you finish, add your names and a demo video link here, then submit one link to your project repository.
 
 **Group Members:** (Penn, Eliza, Quin)  
-* [OUR VIDEO](https://app.screencastify.com/watch/4QfVL99ew8dNMm8SNAFo)
+* [OUR VIDEO](https://drive.google.com/file/d/1IFTMExp4iq_AfVLg7DZ8YAOyz8RxNLBp/view?usp=sharing)
 
 ---
 
